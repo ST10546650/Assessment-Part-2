@@ -157,7 +157,7 @@ E*ample:
 
 ## Interactive Effects
 
-Pseudo*classes were used to improve usability.
+Pseudo-classes were used to improve usability.
 
 ```css
 a:hover{
@@ -244,7 +244,7 @@ This ensures images display correctly on desktops, tablets, and mobile devices.
 
 ---
 
-## 3.4 Testing*and Iteration
+## 3.4 Testing and Iteration
 
 The website was tested using browser developer tools.
 *Testing included:
