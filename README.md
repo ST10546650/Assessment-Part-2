@@ -265,26 +265,17 @@ Adjustments were made to:
 
 # Screenshots
 
-#* Desktop View
+## Desktop View
 
-Add your desktop screenshot here.
-
-images/desktop.png
-*---
+![Desktop View](images/desktop.png)
 
 ## Tablet View
 
-Add your tablet screenshot here.
-
-images/tablet.png
-
----
+![Tablet View](images/tablet.png)
 
 ## Mobile View
 
-Add your mobile screenshot here.
-
-images/mobile.png
+![Mobile View](images/mobile.png)
 
 ---
 
