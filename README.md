@@ -281,6 +281,10 @@ Adjustments were made to:
 
 ![Enquiry Page Screenshot](Website%20Screenshot.png)
 
+## Services Page
+
+![Services Page Screenshot](Website%20Screenshot.png)
+
 ---
 
 # Changelog
