@@ -265,9 +265,21 @@ Adjustments were made to:
 
 # Screenshots
 
-## Website Screenshot
+## Home Page
 
-![Website Screenshot](Website%20Screenshot.png)
+![Home Page Screenshot](Website%20Screenshot.png)
+
+## About Page
+
+![About Page Screenshot](Website%20Screenshot.png)
+
+## Contact Page
+
+![Contact Page Screenshot](Website%20Screenshot.png)
+
+## Enquiry Page
+
+![Enquiry Page Screenshot](Website%20Screenshot.png)
 
 ---
 
