@@ -11,7 +11,7 @@
 
 # Project Overview
 
-BackroomFind is a property rental website designed to help tenants find affordable long-term backroom accommodation in South Africa. The website connects tenants directly with landlords and provides property information, enquiry forms, and contact options.
+BackroomFind is a property rental website designed to help tenants find affordable long-term backroom accommodation in South Africa. The website connects tenants directly with landlords and provides p[...]
 
 ---
 
@@ -238,7 +238,7 @@ img{
     Max-width:100%;
     height:auto;
 }
-``
+```
 
 This ensures images display correctly on desktops, tablets, and mobile devices.
 
@@ -290,7 +290,22 @@ images/mobile.png
 
 # Changelog
 
-## Part * Updates
+## Corrections Implemented
+
+- Added external stylesheet (styles.css) that was missing.
+- Corrected broken HTML code on the Home page.
+- Fixed navigation links across all pages.
+- Added proper file and folder structure:
+  - css
+  - js
+  - images
+- Added sitemap that was missing.
+- Improved README with complete project information.
+- Added GitHub repository evidence and commits.
+- Performed website testing and debugging.
+- Added image references and source attribution.
+
+## Part 2 Updates
 
 - Created external stylesheet
 - Applied base styling
