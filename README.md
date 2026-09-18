@@ -265,17 +265,9 @@ Adjustments were made to:
 
 # Screenshots
 
-## Desktop View
+## Website Screenshot
 
-![Desktop View](images/desktop.png)
-
-## Tablet View
-
-![Tablet View](images/tablet.png)
-
-## Mobile View
-
-![Mobile View](images/mobile.png)
+![Website Screenshot](Website%20Screenshot.png)
 
 ---
 
