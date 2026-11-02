@@ -9,377 +9,274 @@
 
 ---
 
-# Project Overview
+## Project Overview
 
-BackroomFind is a property rental website designed to help tenants find affordable long-term backroom accommodation in South Africa. The website connects tenants directly with landlords and provides p[...]
+BackroomFind is a property rental website designed to help tenants find affordable long-term backroom accommodation in South Africa. The website connects tenants directly with landlords and lets visitors browse available rooms, read about the service, make an enquiry and get in touch.
 
 ---
 
-# Website Pages
+## Website Pages
 
-- [Home](Index.html)
+- [Home](index.html)
 - [About](about.html)
 - [Services](services.html)
-- [Gallery](gallery.html)
 - [Enquiry](enquiry.html)
 - [Contact](contact.html)
-- [CSS Stylesheet](css/Style.css)
+- [CSS Stylesheet](Style.css)
 
 All pages use the shared stylesheet:
 
 ```html
-<link rel="stylesheet" href="css/Style.css">
+<link rel="stylesheet" href="Style.css">
 ```
-
-Each page also includes a link to this README document.
 
 ---
 
-# Technologies Used
+## Project Structure
+
+```
+Assessment-Part-2/
+├── index.html
+├── about.html
+├── services.html
+├── enquiry.html
+├── contact.html
+├── README.md
+├── Style.css
+├── Images/
+└── (page screenshots)
+```
+
+All HTML filenames are lowercase so the navigation links work on GitHub Pages, which is case-sensitive.
+
+---
+
+## Technologies Used
 
 - HTML5
-- CSS3
+- CSS3 (Flexbox and CSS Grid)
 - Visual Studio Code
 - GitHub
 
 ---
 
-# CSS Styling for Desktop Solution
+## CSS Styling for Desktop Solution
 
-## 2.1 External Stylesheet
+### 2.1 External Stylesheet
 
-An external stylesheet named `styles.css` was created and linked to all HTML pages to ensure a consistent appearance across the website.
-
-Features:
+An external stylesheet named `Style.css` is stored in the project root and linked to every HTML page to keep the appearance consistent across the website.
 
 - Single stylesheet used on all pages
-- Easy maintenance
+- Easy to maintain
 - Consistent design
 
----
+### 2.2 Base Style
 
-## 2.2 Base Style
+Default styles applied to the whole site:
 
-The following default styles were applied:
-
-- Font family
-- Font size
-- Text colour
-- Background colour
 - Margin and padding reset
 - Box-sizing reset
-
-Example:
-
-```css
-*{
-    margin:0;
-    padding:0;
-  * box-sizing:border-box;
-}
-
-body{
- *  font-family:Arial, sans-serif;
- *  background-color:#F5F5F5;
-    color:#333333;
-}
-```
-
----
-
-## 2.3 Typography Styles
-
-Typography styling Includes:
-
 - Font family
-- Font size
-- Font weight
-- Line height
-- Letter spacing
+- Font size and line height
+- Text and background colours
 
-Example:
+### 2.3 Typography Styles
 
-```css
-h1{
- *  font-size:2.5rem;
-    font-weigh*:700;
-}
+- Body font: Aptos, with Arial and sans-serif fallbacks
+- Headings (`h1`, `h2`, `h3`): Poppins, with Arial and sans-serif fallbacks
+- Heading hierarchy set with `rem` font sizes (for example `h1` at 2.5rem and `h2` at 1.8rem)
+- Font weights and line height set for readability
 
-p{
-    line-height:1.6;
-}*```
+### 2.4 Layout Structure
 
----
+Flexbox and CSS Grid are used to create the page layouts.
 
-## 2.4 Layout Structure
-*Flexbox and CSS Grid were used to Create page layouts.
-
-Structure includes:
-
-- Header
-- Navigation
-- Main Content
-- Footer
-
-Example:
+- **Flexbox:** the navigation bar and page sections
+- **CSS Grid:** the room listings on the Home page
 
 ```css
-nav{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.room-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    justify-content: center;
+    gap: 20px;
 }
 ```
 
----
+### 2.5 Visual Styles
 
-## 2.5 Visual Styles
-
-Visual styling includes:
-
-- Colours
-- Background colours
-- Borders
-- Border radius
+- Colour scheme (green `#25D366`, navy `#1E3A5F`, light grey backgrounds)
+- Borders and border radius
 - Box shadows
+- Hover transitions
 
-E*ample:
+### 2.6 Pseudo-classes
 
-```css
-.content-card{
-    background-color:#ffffff;
-    border:1px solid #dddddd;
-    box-shadow*0 4px 8px rgba(0,0,0,0.1);
-}
-```
-
-*--
-
-## Interactive Effects
-
-Pseudo-classes were used to improve usability.
+`:hover`, `:focus` and `:active` are used to improve usability.
 
 ```css
-a:hover{
-    color:#2*D366;
+.btn:hover,
+button:hover{
+    background-color: #1E3A5F;
 }
 
-a:focus{
-    outline:2px solid #25D366;
+.btn:active,
+button:active{
+    background-color: #142840;
+    transform: scale(0.97);
 }
 
-a:active{
-    color:gray;
+input:focus,
+textarea:focus,
+select:focus{
+    outline: 2px solid #25D366;
 }
 ```
 
 ---
 
-# Responsive Design
+## Responsive Design
 
-## 3.1 Breakpoints
+### 3.1 Breakpoints
 
-The website was designed for:
+Three media queries are used:
 
-### Desktop
-*- Multi-column layout
-- Full*navigation menu
-
-### Tablet
-
-- Adjusted content spacing
-- Responsive Navigation
-
-### Mobile
-
-- Single-column layout
-- Stacked navigation menu
-
-Example:
+| Breakpoint | Device | Changes |
+|---|---|---|
+| 1024px | Small desktop / large tablet | Reduced spacing, room cards in 2 columns |
+| 768px | Tablet | Navigation wraps, room cards in 1 column, adjusted typography |
+| 480px | Mobile | Full-width stacked navigation links, smaller typography |
 
 ```css
-@media (max-width:768px){
-    nav{
-        flex-direction:column;
+@media screen and (max-width: 768px){
+    .room-container{
+        grid-template-columns: 1fr;
     }
 }
 ```
 
----
+### 3.2 Relative Units
 
-*# 3.2 Relative Units
+`rem` and `%` units are used for font sizes, widths and spacing so the layout scales with the screen.
 
-The followin* relative units were used:
-
-- rem
-* em
-- %
-
-Example:
-
-```css
-h1{
-    Font-size:2rem;
-}
-
-.container{
-*   width:90%;
-}
-```
-
----
-
-## 3.3 Responsive Images
-
-Images were made *esponsive using:
+### 3.3 Responsive Images
 
 ```css
 img{
-    Max-width:100%;
-    height:auto;
+    max-width: 100%;
+    height: auto;
 }
 ```
 
-This ensures images display correctly on desktops, tablets, and mobile devices.
+On mobile, room images also use `object-fit: cover` with a maximum height so they stay neat.
+
+### 3.4 Testing and Iteration
+
+The website was tested in browser developer tools at desktop, tablet and mobile sizes. Adjustments were made to layout, navigation, typography, images and spacing.
 
 ---
 
-## 3.4 Testing and Iteration
+## Screenshots
 
-The website was tested using browser developer tools.
-*Testing included:
+### Home Page
 
-- Desktop view
-* Tablet view
-- Mobile view
+![Home Page Screenshot](Index%20Screenshot.png)
 
-Adjustments were made to:
+### About Page
 
-- Layout
-- Navigation
-- Typography
-- Images
-- Content spacing
+![About Page Screenshot](About%20Screenshot.png)
 
----
+### Services Page
 
-# Screenshots
+![Services Page Screenshot](Services%20Screenshot.png)
 
-## Home Page
+### Enquiry Page
 
-![Home Page Screenshot](Website%20Screenshot.png)
+![Enquiry Page Screenshot](Enquiry%20Screenshot.png)
 
-## About Page
+### Contact Page
 
-![About Page Screenshot](Website%20Screenshot.png)
+![Contact Page Screenshot](Contact%20Screenhot.png)
 
-## Contact Page
+### Mobile View
 
-![Contact Page Screenshot](Website%20Screenshot.png)
-
-## Enquiry Page
-
-![Enquiry Page Screenshot](Website%20Screenshot.png)
-
-## Services Page
-
-![Services Page Screenshot](Website%20Screenshot.png)
+![Mobile Screenshot](Mobile%20Screenshot.jpg)
 
 ---
 
-# Changelog
+## Changelog
 
-## Corrections Implemented
+### Corrections Implemented (from Part 1 feedback)
 
-- Added external stylesheet (styles.css) that was missing.
-- Corrected broken HTML code on the Home page.
-- Fixed navigation links across all pages.
-- Added proper file and folder structure:
-  - css
-  - js
-  - images
-- Added sitemap that was missing.
-- Improved README with complete project information.
-- Added GitHub repository evidence and commits.
-- Performed website testing and debugging.
-- Added image references and source attribution.
+- Added the external stylesheet that was missing
+- Corrected broken HTML code on the Home page
+- Fixed navigation links across all pages and renamed the HTML files to lowercase so they match the links
+- Added a proper file and folder structure (`css` and `Images`)
+- Improved the README with complete project information
+- Added GitHub repository evidence and commits
+- Performed website testing and debugging
+- Added image references and source attribution
 
-## Part 2 Updates
+### Part 2 Updates
 
-- Created external stylesheet
-- Applied base styling
-- Added typography styling
-- Implemented flexbox layouts
-- Implemented CSS Grid layouts
-- Added colour scheme
--*Added hover, focus, and active effects
-- Added responsive media queries
+- Created the external stylesheet and moved it into the `css` folder
+- Applied base styling and typography styling
+- Implemented Flexbox layouts and a CSS Grid layout for room listings
+- Added the colour scheme and visual styling
+- Added `:hover`, `:focus` and `:active` effects
+- Added responsive media queries at 1024px, 768px and 480px
 - Optimised responsive images
-- Updated website layout based on feedback
+- Updated the website layout based on feedback
+- Added labels to the search box on the Home page and tidied the About page markup
+- Corrected README errors and broken links
 
 ---
 
-# Challenges and Solutions
+## Challenges and Solutions
 
-## Challenge 1
+**Challenge 1:** Responsive layout issues on smaller screens.
+**Solution:** Used media queries and a Grid layout that changes the number of columns.
 
-Responsive layout issues on smaller screens.
+**Challenge 2:** Navigation alignment problems.
+**Solution:** Used Flexbox to align and wrap the navigation links.
 
-###*Solution
+**Challenge 3:** Image resizing issues.
+**Solution:** Used `max-width: 100%` and `height: auto`, plus `object-fit` on mobile.
 
-Implemented media queries and responsive layouts.
-
----
-
-## Challenge 2
-
-Navigation alignment problems.
-
-### Solution
-
-Used Flexbox to align and organise navigation links.
+**Challenge 4:** Stylesheet not loading because of a wrong file path.
+**Solution:** Updated every HTML page to link to `Style.css` in the project root.
 
 ---
 
-## Challenge 3
+## Future Improvements
 
-Image resizing issues.
-
-### Solution
-
-User responsive image styling with max*width and height auto.
-
----
-
-# Future Improvements
-
-- Add user login Functionality
+- Add user login functionality
 - Add search filters
-and Integrate maps
+- Integrate maps
 - Add online booking features
-- Improve accessibility*
+- Improve accessibility
+
+
 ---
 
-# GitHub Repository
-
-Repository Link:
+## GitHub Repository
 
 https://github.com/ST10546650/Assessment-Part-2
 
 ---
 
-# References
+## References
 
-Adobe. (2024). Color Wheel a*d Color Theory. Available at: https://color.adobe.com
+Adobe (2024) *Adobe Color*. Available at: https://color.adobe.com (Accessed: [add date]).
 
-Google Fonts. *2024). Poppins Font Family. Availaile at: https://fonts.google.com
+Google Fonts (2024) *Poppins*. Available at: https://fonts.google.com/specimen/Poppins (Accessed: [add date]).
 
-MDN Web Docs. (2024). HTML: HyperTex* Markup Language. Available at: https://developer.mozilla.org
+MDN Web Docs (2024) *HTML: HyperText Markup Language*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: [add date]).
 
-MDN Web Docs. (2024). CSS: Cascading Style Sheets. Available at: https://developer.mozilla.org
+MDN Web Docs (2024) *CSS: Cascading Style Sheets*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS (Accessed: [add date]).
 
-Netlify. (2024)* Netlify Documentation. Available at: https://www.netlify.com
+Netlify (2024) *Netlify Docs*. Available at: https://docs.netlify.com (Accessed: [add date]).
 
-Nielse* Norman Group. (2024). Mobile-First Design Basics. Available at: https://www.nngroup.com
+Nielsen Norman Group (2024) *Mobile-first design*. Available at: https://www.nngroup.com (Accessed: [add date]).
 
-WhatsApp Busin*ss. (2024). WhatsApp Business Platform. Available at: https://busines*.whatsapp.com
+WhatsApp (2024) *WhatsApp Business Platform*. Available at: https://business.whatsapp.com (Accessed: [add date]).
